@@ -1,0 +1,768 @@
+{
+  "components": {
+    "comp-data-preprocessing": {
+      "executorLabel": "exec-data-preprocessing",
+      "inputDefinitions": {
+        "artifacts": {
+          "dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "dataset_clean": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
+    "comp-generate-dataset": {
+      "executorLabel": "exec-generate-dataset",
+      "inputDefinitions": {
+        "parameters": {
+          "dialect": {
+            "parameterType": "STRING"
+          },
+          "location": {
+            "parameterType": "STRING"
+          },
+          "project_id": {
+            "parameterType": "STRING"
+          },
+          "query": {
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
+    "comp-get-recommendation-and-evaluation": {
+      "executorLabel": "exec-get-recommendation-and-evaluation",
+      "inputDefinitions": {
+        "artifacts": {
+          "dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "destination_table": {
+            "parameterType": "STRING"
+          },
+          "location": {
+            "parameterType": "STRING"
+          },
+          "product_category": {
+            "parameterType": "STRING"
+          },
+          "project_id": {
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "kpi": {
+            "artifactType": {
+              "schemaTitle": "system.Metrics",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
+    "comp-get-recommendation-and-evaluation-2": {
+      "executorLabel": "exec-get-recommendation-and-evaluation-2",
+      "inputDefinitions": {
+        "artifacts": {
+          "dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "destination_table": {
+            "parameterType": "STRING"
+          },
+          "location": {
+            "parameterType": "STRING"
+          },
+          "product_category": {
+            "parameterType": "STRING"
+          },
+          "project_id": {
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "kpi": {
+            "artifactType": {
+              "schemaTitle": "system.Metrics",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
+    "comp-get-recommendation-and-evaluation-3": {
+      "executorLabel": "exec-get-recommendation-and-evaluation-3",
+      "inputDefinitions": {
+        "artifacts": {
+          "dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "destination_table": {
+            "parameterType": "STRING"
+          },
+          "location": {
+            "parameterType": "STRING"
+          },
+          "product_category": {
+            "parameterType": "STRING"
+          },
+          "project_id": {
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "kpi": {
+            "artifactType": {
+              "schemaTitle": "system.Metrics",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
+    "comp-get-recommendation-and-evaluation-4": {
+      "executorLabel": "exec-get-recommendation-and-evaluation-4",
+      "inputDefinitions": {
+        "artifacts": {
+          "dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "destination_table": {
+            "parameterType": "STRING"
+          },
+          "location": {
+            "parameterType": "STRING"
+          },
+          "product_category": {
+            "parameterType": "STRING"
+          },
+          "project_id": {
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "kpi": {
+            "artifactType": {
+              "schemaTitle": "system.Metrics",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
+    "comp-get-recommendation-and-evaluation-5": {
+      "executorLabel": "exec-get-recommendation-and-evaluation-5",
+      "inputDefinitions": {
+        "artifacts": {
+          "dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "destination_table": {
+            "parameterType": "STRING"
+          },
+          "location": {
+            "parameterType": "STRING"
+          },
+          "product_category": {
+            "parameterType": "STRING"
+          },
+          "project_id": {
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "kpi": {
+            "artifactType": {
+              "schemaTitle": "system.Metrics",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultPipelineRoot": "gs://bucket-vertexai-pipeline-artifacts/PIPELINE_ROOT_4/",
+  "deploymentSpec": {
+    "executors": {
+      "exec-data-preprocessing": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "data_preprocessing"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet     --no-warn-script-location 'pandas' 'numpy' 'kfp==2.0.0' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\npython3 -m kfp.components.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef data_preprocessing(\n    dataset: Input[Dataset],\n    dataset_clean: Output[Dataset]\n):\n    import pandas as pd\n    import logging\n\n    logging.getLogger().setLevel(logging.INFO)\n\n    df = pd.read_csv(dataset.path + \".csv\")\n\n    clean_df = df.dropna(subset = ['ReceiptNo'])\n    logging.info(\"Dataframe remove null value result: \")\n    logging.info(clean_df.isnull().sum())\n\n    clean_df = clean_df[(clean_df.Quantity >= 0) & (clean_df.UnitPrice >= 0)]\n    logging.info(\"Dataframe get more than zero quantity: \")\n    logging.info(clean_df.describe())\n\n    def has_right_pcode(input):\n        import re\n\n        x = re.search('^\\\\d{7}$', input)\n        y = re.search('^[a-zA-Z]{1}\\\\d{7}$', input)\n        if (x or y):\n            return True\n        else:\n            return False\n\n    clean_df['ReceiptNo'] = clean_df['ReceiptNo'].astype('str')\n    clean_df[clean_df['ReceiptNo'].str.contains(\"c\")].shape[0]\n    clean_df['ProductCode'] = clean_df['ProductCode'].astype('str')\n    clean_df = clean_df[clean_df['ProductCode'].apply(has_right_pcode) == True]\n    logging.info(\"Dataframe contains right ReceiptNo and ProductCode: \")\n    logging.info(clean_df.head())\n\n    df_items = pd.DataFrame(clean_df.groupby('ProductCode').apply(lambda x: x['Product'].unique())).reset_index()\n    df_items.rename(columns = { 0: 'ProductClean'}, inplace = True)\n    logging.info(\"ProductCode that have more than one Product: \")\n    logging.info(df_items[df_items['ProductClean'].str.len() != 1])\n\n    df_items.loc[:, 'ProductClean'] = df_items.ProductClean.map(lambda x: x[0])\n    logging.info(df_items.head())\n\n    clean_df = pd.merge(clean_df, df_items, on = 'ProductCode')\n    clean_df = clean_df.drop('Product', axis = 1)\n    logging.info(\"Get only 1 ProductCode equal to 1 Product: \")\n    logging.info(clean_df.head())\n\n    clean_df.rename(columns = { 'ProductClean': 'Product'}, inplace = True)\n    logging.info(\"Remaping columns name: \")\n    logging.info(clean_df.head())\n    df.to_csv(dataset_clean.path + \".csv\" , index=False, encoding='utf-8-sig')\n\n"
+          ],
+          "image": "python:3.9"
+        }
+      },
+      "exec-generate-dataset": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "generate_dataset"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet     --no-warn-script-location 'pandas' 'numpy' 'pandas-gbq==0.19.2' 'kfp==2.0.0' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\npython3 -m kfp.components.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef generate_dataset(\n    project_id: str,\n    location: str,\n    query: str,\n    dialect: str,\n    dataset: Output[Dataset]\n):\n    import pandas as pd\n    import logging\n\n    logging.getLogger().setLevel(logging.INFO)\n\n    df = pd.read_gbq(\n            project_id=project_id, \n            location=location,\n            dialect=dialect,\n            query=query\n        )\n    logging.info(\"Dataframe: \")\n    logging.info(df.head())\n    logging.info(f\"Dataframe shape: {str(df.shape)}\")\n    logging.info(\"Dataframe info: \")\n    logging.info(df.info())\n    logging.info(\"Dataframe describe: \")\n    logging.info(df.describe())\n    logging.info(\"Dataframe null value: \")\n    logging.info(df.isnull().sum())\n    logging.info(\"Dataframe number of unique values: \")\n    logging.info(df.nunique())\n    df.to_csv(dataset.path + \".csv\" , index=False, encoding='utf-8-sig')\n\n"
+          ],
+          "image": "python:3.9"
+        }
+      },
+      "exec-get-recommendation-and-evaluation": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "get_recommendation_and_evaluation"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet     --no-warn-script-location 'pandas' 'numpy' 'pandas-gbq==0.19.2' 'mlxtend==0.22.0' 'kfp==2.0.0' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\npython3 -m kfp.components.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef get_recommendation_and_evaluation(\n    project_id: str,\n    location: str,\n    destination_table: str,\n    product_category: str,\n    dataset: Input[Dataset],\n    kpi: Output[Metrics]\n):\n    import pandas as pd\n    import logging\n    from datetime import date\n    from mlxtend.frequent_patterns import apriori, association_rules\n\n    logging.getLogger().setLevel(logging.INFO)\n\n    df = pd.read_csv(dataset.path + \".csv\")\n    if product_category == \"ALL\":\n        pass\n    else:\n        df = df[df['ProductGroup'] == product_category]\n\n    df_items_together = df.groupby(['ReceiptNo','Product'])['Quantity'].sum().sort_values(ascending=False)\n    df_items_together = df_items_together.unstack().fillna(0)\n\n    encode = lambda x : True if (x >= 1) else False\n    df_items_together = df_items_together.applymap(encode)\n    logging.info(\"Remaping dataframe for modeling: \")\n    logging.info(df_items_together.head())\n\n    rec_items = apriori(df_items_together, min_support = 0.01, use_colnames = True, verbose = 1)\n    rec_items['length'] = rec_items['itemsets'].apply(lambda x: len(x))\n    logging.info(\"Modeling results: \")\n    logging.info(rec_items.sort_values(by=['length'], ascending=False).head(10))\n\n    rules_result = association_rules(rec_items, metric = \"confidence\", min_threshold = 0.0)\n    rules_result['date_run'] = str(date.today())\n    logging.info(\"Modeling rule results: \")\n    logging.info(rules_result.sort_values(by=['confidence'], ascending=False))\n\n    kpi.log_metric(\"avg antecedent support\", float(rules_result.loc[:, 'antecedent support'].mean()) if float(rules_result.loc[:, 'antecedent support'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg consequent support\", float(rules_result.loc[:, 'consequent support'].mean()) if float(rules_result.loc[:, 'consequent support'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg support\", float(rules_result.loc[:, 'support'].mean()) if float(rules_result.loc[:, 'support'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg confidence\", float(rules_result.loc[:, 'confidence'].mean()) if float(rules_result.loc[:, 'confidence'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg lift\", float(rules_result.loc[:, 'lift'].mean()) if float(rules_result.loc[:, 'lift'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg leverage\", float(rules_result.loc[:, 'leverage'].mean()) if float(rules_result.loc[:, 'leverage'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg conviction\", float(rules_result.loc[:, 'conviction'].mean()) if float(rules_result.loc[:, 'conviction'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg zhangs metric\", float(rules_result.loc[:, 'zhangs_metric'].mean()) if float(rules_result.loc[:, 'zhangs_metric'].mean()) != float('inf') else 0)\n\n    rules_result[\"antecedents\"] = rules_result[\"antecedents\"].apply(lambda x: list(x)[0]).astype(\"unicode\")\n    rules_result[\"consequents\"] = rules_result[\"consequents\"].apply(lambda x: list(x)[0]).astype(\"unicode\")\n    rules_result[\"antecedent_support\"] = rules_result[\"antecedent support\"]\n    rules_result[\"consequent_support\"] = rules_result[\"consequent support\"]\n    rules_result.drop(['antecedent support', 'consequent support'], axis=1, inplace=True)\n    rules_result = rules_result.astype(str)\n    rules_result = rules_result[['date_run','antecedents','consequents','antecedent_support','consequent_support','support','confidence','lift','leverage','conviction','zhangs_metric']]\n    rules_result.to_gbq(project_id=project_id, location=location, destination_table=destination_table, if_exists=\"replace\")\n\n"
+          ],
+          "image": "python:3.9"
+        }
+      },
+      "exec-get-recommendation-and-evaluation-2": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "get_recommendation_and_evaluation"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet     --no-warn-script-location 'pandas' 'numpy' 'pandas-gbq==0.19.2' 'mlxtend==0.22.0' 'kfp==2.0.0' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\npython3 -m kfp.components.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef get_recommendation_and_evaluation(\n    project_id: str,\n    location: str,\n    destination_table: str,\n    product_category: str,\n    dataset: Input[Dataset],\n    kpi: Output[Metrics]\n):\n    import pandas as pd\n    import logging\n    from datetime import date\n    from mlxtend.frequent_patterns import apriori, association_rules\n\n    logging.getLogger().setLevel(logging.INFO)\n\n    df = pd.read_csv(dataset.path + \".csv\")\n    if product_category == \"ALL\":\n        pass\n    else:\n        df = df[df['ProductGroup'] == product_category]\n\n    df_items_together = df.groupby(['ReceiptNo','Product'])['Quantity'].sum().sort_values(ascending=False)\n    df_items_together = df_items_together.unstack().fillna(0)\n\n    encode = lambda x : True if (x >= 1) else False\n    df_items_together = df_items_together.applymap(encode)\n    logging.info(\"Remaping dataframe for modeling: \")\n    logging.info(df_items_together.head())\n\n    rec_items = apriori(df_items_together, min_support = 0.01, use_colnames = True, verbose = 1)\n    rec_items['length'] = rec_items['itemsets'].apply(lambda x: len(x))\n    logging.info(\"Modeling results: \")\n    logging.info(rec_items.sort_values(by=['length'], ascending=False).head(10))\n\n    rules_result = association_rules(rec_items, metric = \"confidence\", min_threshold = 0.0)\n    rules_result['date_run'] = str(date.today())\n    logging.info(\"Modeling rule results: \")\n    logging.info(rules_result.sort_values(by=['confidence'], ascending=False))\n\n    kpi.log_metric(\"avg antecedent support\", float(rules_result.loc[:, 'antecedent support'].mean()) if float(rules_result.loc[:, 'antecedent support'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg consequent support\", float(rules_result.loc[:, 'consequent support'].mean()) if float(rules_result.loc[:, 'consequent support'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg support\", float(rules_result.loc[:, 'support'].mean()) if float(rules_result.loc[:, 'support'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg confidence\", float(rules_result.loc[:, 'confidence'].mean()) if float(rules_result.loc[:, 'confidence'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg lift\", float(rules_result.loc[:, 'lift'].mean()) if float(rules_result.loc[:, 'lift'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg leverage\", float(rules_result.loc[:, 'leverage'].mean()) if float(rules_result.loc[:, 'leverage'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg conviction\", float(rules_result.loc[:, 'conviction'].mean()) if float(rules_result.loc[:, 'conviction'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg zhangs metric\", float(rules_result.loc[:, 'zhangs_metric'].mean()) if float(rules_result.loc[:, 'zhangs_metric'].mean()) != float('inf') else 0)\n\n    rules_result[\"antecedents\"] = rules_result[\"antecedents\"].apply(lambda x: list(x)[0]).astype(\"unicode\")\n    rules_result[\"consequents\"] = rules_result[\"consequents\"].apply(lambda x: list(x)[0]).astype(\"unicode\")\n    rules_result[\"antecedent_support\"] = rules_result[\"antecedent support\"]\n    rules_result[\"consequent_support\"] = rules_result[\"consequent support\"]\n    rules_result.drop(['antecedent support', 'consequent support'], axis=1, inplace=True)\n    rules_result = rules_result.astype(str)\n    rules_result = rules_result[['date_run','antecedents','consequents','antecedent_support','consequent_support','support','confidence','lift','leverage','conviction','zhangs_metric']]\n    rules_result.to_gbq(project_id=project_id, location=location, destination_table=destination_table, if_exists=\"replace\")\n\n"
+          ],
+          "image": "python:3.9"
+        }
+      },
+      "exec-get-recommendation-and-evaluation-3": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "get_recommendation_and_evaluation"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet     --no-warn-script-location 'pandas' 'numpy' 'pandas-gbq==0.19.2' 'mlxtend==0.22.0' 'kfp==2.0.0' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\npython3 -m kfp.components.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef get_recommendation_and_evaluation(\n    project_id: str,\n    location: str,\n    destination_table: str,\n    product_category: str,\n    dataset: Input[Dataset],\n    kpi: Output[Metrics]\n):\n    import pandas as pd\n    import logging\n    from datetime import date\n    from mlxtend.frequent_patterns import apriori, association_rules\n\n    logging.getLogger().setLevel(logging.INFO)\n\n    df = pd.read_csv(dataset.path + \".csv\")\n    if product_category == \"ALL\":\n        pass\n    else:\n        df = df[df['ProductGroup'] == product_category]\n\n    df_items_together = df.groupby(['ReceiptNo','Product'])['Quantity'].sum().sort_values(ascending=False)\n    df_items_together = df_items_together.unstack().fillna(0)\n\n    encode = lambda x : True if (x >= 1) else False\n    df_items_together = df_items_together.applymap(encode)\n    logging.info(\"Remaping dataframe for modeling: \")\n    logging.info(df_items_together.head())\n\n    rec_items = apriori(df_items_together, min_support = 0.01, use_colnames = True, verbose = 1)\n    rec_items['length'] = rec_items['itemsets'].apply(lambda x: len(x))\n    logging.info(\"Modeling results: \")\n    logging.info(rec_items.sort_values(by=['length'], ascending=False).head(10))\n\n    rules_result = association_rules(rec_items, metric = \"confidence\", min_threshold = 0.0)\n    rules_result['date_run'] = str(date.today())\n    logging.info(\"Modeling rule results: \")\n    logging.info(rules_result.sort_values(by=['confidence'], ascending=False))\n\n    kpi.log_metric(\"avg antecedent support\", float(rules_result.loc[:, 'antecedent support'].mean()) if float(rules_result.loc[:, 'antecedent support'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg consequent support\", float(rules_result.loc[:, 'consequent support'].mean()) if float(rules_result.loc[:, 'consequent support'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg support\", float(rules_result.loc[:, 'support'].mean()) if float(rules_result.loc[:, 'support'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg confidence\", float(rules_result.loc[:, 'confidence'].mean()) if float(rules_result.loc[:, 'confidence'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg lift\", float(rules_result.loc[:, 'lift'].mean()) if float(rules_result.loc[:, 'lift'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg leverage\", float(rules_result.loc[:, 'leverage'].mean()) if float(rules_result.loc[:, 'leverage'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg conviction\", float(rules_result.loc[:, 'conviction'].mean()) if float(rules_result.loc[:, 'conviction'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg zhangs metric\", float(rules_result.loc[:, 'zhangs_metric'].mean()) if float(rules_result.loc[:, 'zhangs_metric'].mean()) != float('inf') else 0)\n\n    rules_result[\"antecedents\"] = rules_result[\"antecedents\"].apply(lambda x: list(x)[0]).astype(\"unicode\")\n    rules_result[\"consequents\"] = rules_result[\"consequents\"].apply(lambda x: list(x)[0]).astype(\"unicode\")\n    rules_result[\"antecedent_support\"] = rules_result[\"antecedent support\"]\n    rules_result[\"consequent_support\"] = rules_result[\"consequent support\"]\n    rules_result.drop(['antecedent support', 'consequent support'], axis=1, inplace=True)\n    rules_result = rules_result.astype(str)\n    rules_result = rules_result[['date_run','antecedents','consequents','antecedent_support','consequent_support','support','confidence','lift','leverage','conviction','zhangs_metric']]\n    rules_result.to_gbq(project_id=project_id, location=location, destination_table=destination_table, if_exists=\"replace\")\n\n"
+          ],
+          "image": "python:3.9"
+        }
+      },
+      "exec-get-recommendation-and-evaluation-4": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "get_recommendation_and_evaluation"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet     --no-warn-script-location 'pandas' 'numpy' 'pandas-gbq==0.19.2' 'mlxtend==0.22.0' 'kfp==2.0.0' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\npython3 -m kfp.components.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef get_recommendation_and_evaluation(\n    project_id: str,\n    location: str,\n    destination_table: str,\n    product_category: str,\n    dataset: Input[Dataset],\n    kpi: Output[Metrics]\n):\n    import pandas as pd\n    import logging\n    from datetime import date\n    from mlxtend.frequent_patterns import apriori, association_rules\n\n    logging.getLogger().setLevel(logging.INFO)\n\n    df = pd.read_csv(dataset.path + \".csv\")\n    if product_category == \"ALL\":\n        pass\n    else:\n        df = df[df['ProductGroup'] == product_category]\n\n    df_items_together = df.groupby(['ReceiptNo','Product'])['Quantity'].sum().sort_values(ascending=False)\n    df_items_together = df_items_together.unstack().fillna(0)\n\n    encode = lambda x : True if (x >= 1) else False\n    df_items_together = df_items_together.applymap(encode)\n    logging.info(\"Remaping dataframe for modeling: \")\n    logging.info(df_items_together.head())\n\n    rec_items = apriori(df_items_together, min_support = 0.01, use_colnames = True, verbose = 1)\n    rec_items['length'] = rec_items['itemsets'].apply(lambda x: len(x))\n    logging.info(\"Modeling results: \")\n    logging.info(rec_items.sort_values(by=['length'], ascending=False).head(10))\n\n    rules_result = association_rules(rec_items, metric = \"confidence\", min_threshold = 0.0)\n    rules_result['date_run'] = str(date.today())\n    logging.info(\"Modeling rule results: \")\n    logging.info(rules_result.sort_values(by=['confidence'], ascending=False))\n\n    kpi.log_metric(\"avg antecedent support\", float(rules_result.loc[:, 'antecedent support'].mean()) if float(rules_result.loc[:, 'antecedent support'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg consequent support\", float(rules_result.loc[:, 'consequent support'].mean()) if float(rules_result.loc[:, 'consequent support'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg support\", float(rules_result.loc[:, 'support'].mean()) if float(rules_result.loc[:, 'support'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg confidence\", float(rules_result.loc[:, 'confidence'].mean()) if float(rules_result.loc[:, 'confidence'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg lift\", float(rules_result.loc[:, 'lift'].mean()) if float(rules_result.loc[:, 'lift'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg leverage\", float(rules_result.loc[:, 'leverage'].mean()) if float(rules_result.loc[:, 'leverage'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg conviction\", float(rules_result.loc[:, 'conviction'].mean()) if float(rules_result.loc[:, 'conviction'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg zhangs metric\", float(rules_result.loc[:, 'zhangs_metric'].mean()) if float(rules_result.loc[:, 'zhangs_metric'].mean()) != float('inf') else 0)\n\n    rules_result[\"antecedents\"] = rules_result[\"antecedents\"].apply(lambda x: list(x)[0]).astype(\"unicode\")\n    rules_result[\"consequents\"] = rules_result[\"consequents\"].apply(lambda x: list(x)[0]).astype(\"unicode\")\n    rules_result[\"antecedent_support\"] = rules_result[\"antecedent support\"]\n    rules_result[\"consequent_support\"] = rules_result[\"consequent support\"]\n    rules_result.drop(['antecedent support', 'consequent support'], axis=1, inplace=True)\n    rules_result = rules_result.astype(str)\n    rules_result = rules_result[['date_run','antecedents','consequents','antecedent_support','consequent_support','support','confidence','lift','leverage','conviction','zhangs_metric']]\n    rules_result.to_gbq(project_id=project_id, location=location, destination_table=destination_table, if_exists=\"replace\")\n\n"
+          ],
+          "image": "python:3.9"
+        }
+      },
+      "exec-get-recommendation-and-evaluation-5": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "get_recommendation_and_evaluation"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet     --no-warn-script-location 'pandas' 'numpy' 'pandas-gbq==0.19.2' 'mlxtend==0.22.0' 'kfp==2.0.0' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\npython3 -m kfp.components.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef get_recommendation_and_evaluation(\n    project_id: str,\n    location: str,\n    destination_table: str,\n    product_category: str,\n    dataset: Input[Dataset],\n    kpi: Output[Metrics]\n):\n    import pandas as pd\n    import logging\n    from datetime import date\n    from mlxtend.frequent_patterns import apriori, association_rules\n\n    logging.getLogger().setLevel(logging.INFO)\n\n    df = pd.read_csv(dataset.path + \".csv\")\n    if product_category == \"ALL\":\n        pass\n    else:\n        df = df[df['ProductGroup'] == product_category]\n\n    df_items_together = df.groupby(['ReceiptNo','Product'])['Quantity'].sum().sort_values(ascending=False)\n    df_items_together = df_items_together.unstack().fillna(0)\n\n    encode = lambda x : True if (x >= 1) else False\n    df_items_together = df_items_together.applymap(encode)\n    logging.info(\"Remaping dataframe for modeling: \")\n    logging.info(df_items_together.head())\n\n    rec_items = apriori(df_items_together, min_support = 0.01, use_colnames = True, verbose = 1)\n    rec_items['length'] = rec_items['itemsets'].apply(lambda x: len(x))\n    logging.info(\"Modeling results: \")\n    logging.info(rec_items.sort_values(by=['length'], ascending=False).head(10))\n\n    rules_result = association_rules(rec_items, metric = \"confidence\", min_threshold = 0.0)\n    rules_result['date_run'] = str(date.today())\n    logging.info(\"Modeling rule results: \")\n    logging.info(rules_result.sort_values(by=['confidence'], ascending=False))\n\n    kpi.log_metric(\"avg antecedent support\", float(rules_result.loc[:, 'antecedent support'].mean()) if float(rules_result.loc[:, 'antecedent support'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg consequent support\", float(rules_result.loc[:, 'consequent support'].mean()) if float(rules_result.loc[:, 'consequent support'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg support\", float(rules_result.loc[:, 'support'].mean()) if float(rules_result.loc[:, 'support'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg confidence\", float(rules_result.loc[:, 'confidence'].mean()) if float(rules_result.loc[:, 'confidence'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg lift\", float(rules_result.loc[:, 'lift'].mean()) if float(rules_result.loc[:, 'lift'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg leverage\", float(rules_result.loc[:, 'leverage'].mean()) if float(rules_result.loc[:, 'leverage'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg conviction\", float(rules_result.loc[:, 'conviction'].mean()) if float(rules_result.loc[:, 'conviction'].mean()) != float('inf') else 0)\n    kpi.log_metric(\"avg zhangs metric\", float(rules_result.loc[:, 'zhangs_metric'].mean()) if float(rules_result.loc[:, 'zhangs_metric'].mean()) != float('inf') else 0)\n\n    rules_result[\"antecedents\"] = rules_result[\"antecedents\"].apply(lambda x: list(x)[0]).astype(\"unicode\")\n    rules_result[\"consequents\"] = rules_result[\"consequents\"].apply(lambda x: list(x)[0]).astype(\"unicode\")\n    rules_result[\"antecedent_support\"] = rules_result[\"antecedent support\"]\n    rules_result[\"consequent_support\"] = rules_result[\"consequent support\"]\n    rules_result.drop(['antecedent support', 'consequent support'], axis=1, inplace=True)\n    rules_result = rules_result.astype(str)\n    rules_result = rules_result[['date_run','antecedents','consequents','antecedent_support','consequent_support','support','confidence','lift','leverage','conviction','zhangs_metric']]\n    rules_result.to_gbq(project_id=project_id, location=location, destination_table=destination_table, if_exists=\"replace\")\n\n"
+          ],
+          "image": "python:3.9"
+        }
+      }
+    }
+  },
+  "pipelineInfo": {
+    "description": "Frequently Bought Together Model",
+    "name": "koufu-market-basket-analysis"
+  },
+  "root": {
+    "dag": {
+      "outputs": {
+        "artifacts": {
+          "get-recommendation-and-evaluation-2-kpi": {
+            "artifactSelectors": [
+              {
+                "outputArtifactKey": "kpi",
+                "producerSubtask": "get-recommendation-and-evaluation-2"
+              }
+            ]
+          },
+          "get-recommendation-and-evaluation-3-kpi": {
+            "artifactSelectors": [
+              {
+                "outputArtifactKey": "kpi",
+                "producerSubtask": "get-recommendation-and-evaluation-3"
+              }
+            ]
+          },
+          "get-recommendation-and-evaluation-4-kpi": {
+            "artifactSelectors": [
+              {
+                "outputArtifactKey": "kpi",
+                "producerSubtask": "get-recommendation-and-evaluation-4"
+              }
+            ]
+          },
+          "get-recommendation-and-evaluation-5-kpi": {
+            "artifactSelectors": [
+              {
+                "outputArtifactKey": "kpi",
+                "producerSubtask": "get-recommendation-and-evaluation-5"
+              }
+            ]
+          },
+          "get-recommendation-and-evaluation-kpi": {
+            "artifactSelectors": [
+              {
+                "outputArtifactKey": "kpi",
+                "producerSubtask": "get-recommendation-and-evaluation"
+              }
+            ]
+          }
+        }
+      },
+      "tasks": {
+        "data-preprocessing": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-data-preprocessing"
+          },
+          "dependentTasks": [
+            "generate-dataset"
+          ],
+          "inputs": {
+            "artifacts": {
+              "dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "dataset",
+                  "producerTask": "generate-dataset"
+                }
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "data-preprocessing"
+          }
+        },
+        "generate-dataset": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-generate-dataset"
+          },
+          "inputs": {
+            "parameters": {
+              "dialect": {
+                "runtimeValue": {
+                  "constant": "standard"
+                }
+              },
+              "location": {
+                "componentInputParameter": "location"
+              },
+              "project_id": {
+                "componentInputParameter": "project_id"
+              },
+              "query": {
+                "runtimeValue": {
+                  "constant": "\n            SELECT\n                Receipt_No AS ReceiptNo,\n                Receipt_Created AS ReceiptDate,\n                Product_Code AS ProductCode,\n                Product_Group AS ProductGroup,\n                Product,\n                Qty AS Quantity,\n                Unit_Price AS UnitPrice,\n                Qty * Unit_Price AS TotalPrice\n            FROM\n                `ps-int-datateamrnd-22072022.koufu_product_trx_list.product_list`\n        "
+                }
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "generate-dataset"
+          }
+        },
+        "get-recommendation-and-evaluation": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-get-recommendation-and-evaluation"
+          },
+          "dependentTasks": [
+            "data-preprocessing"
+          ],
+          "inputs": {
+            "artifacts": {
+              "dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "dataset_clean",
+                  "producerTask": "data-preprocessing"
+                }
+              }
+            },
+            "parameters": {
+              "destination_table": {
+                "runtimeValue": {
+                  "constant": "koufu_product_trx_list.cust_recomm_all_category"
+                }
+              },
+              "location": {
+                "componentInputParameter": "location"
+              },
+              "product_category": {
+                "runtimeValue": {
+                  "constant": "ALL"
+                }
+              },
+              "project_id": {
+                "componentInputParameter": "project_id"
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "get-recommendation-and-evaluation"
+          }
+        },
+        "get-recommendation-and-evaluation-2": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-get-recommendation-and-evaluation-2"
+          },
+          "dependentTasks": [
+            "data-preprocessing"
+          ],
+          "inputs": {
+            "artifacts": {
+              "dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "dataset_clean",
+                  "producerTask": "data-preprocessing"
+                }
+              }
+            },
+            "parameters": {
+              "destination_table": {
+                "runtimeValue": {
+                  "constant": "koufu_product_trx_list.cust_recomm_hot_drink_category"
+                }
+              },
+              "location": {
+                "componentInputParameter": "location"
+              },
+              "product_category": {
+                "runtimeValue": {
+                  "constant": "HOT DRINK"
+                }
+              },
+              "project_id": {
+                "componentInputParameter": "project_id"
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "get-recommendation-and-evaluation-2"
+          }
+        },
+        "get-recommendation-and-evaluation-3": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-get-recommendation-and-evaluation-3"
+          },
+          "dependentTasks": [
+            "data-preprocessing"
+          ],
+          "inputs": {
+            "artifacts": {
+              "dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "dataset_clean",
+                  "producerTask": "data-preprocessing"
+                }
+              }
+            },
+            "parameters": {
+              "destination_table": {
+                "runtimeValue": {
+                  "constant": "koufu_product_trx_list.cust_recomm_drink_consumables_category"
+                }
+              },
+              "location": {
+                "componentInputParameter": "location"
+              },
+              "product_category": {
+                "runtimeValue": {
+                  "constant": "DRINK CONSUMABLES"
+                }
+              },
+              "project_id": {
+                "componentInputParameter": "project_id"
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "get-recommendation-and-evaluation-3"
+          }
+        },
+        "get-recommendation-and-evaluation-4": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-get-recommendation-and-evaluation-4"
+          },
+          "dependentTasks": [
+            "data-preprocessing"
+          ],
+          "inputs": {
+            "artifacts": {
+              "dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "dataset_clean",
+                  "producerTask": "data-preprocessing"
+                }
+              }
+            },
+            "parameters": {
+              "destination_table": {
+                "runtimeValue": {
+                  "constant": "koufu_product_trx_list.cust_recomm_shelf_category"
+                }
+              },
+              "location": {
+                "componentInputParameter": "location"
+              },
+              "product_category": {
+                "runtimeValue": {
+                  "constant": "SHELF"
+                }
+              },
+              "project_id": {
+                "componentInputParameter": "project_id"
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "get-recommendation-and-evaluation-4"
+          }
+        },
+        "get-recommendation-and-evaluation-5": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-get-recommendation-and-evaluation-5"
+          },
+          "dependentTasks": [
+            "data-preprocessing"
+          ],
+          "inputs": {
+            "artifacts": {
+              "dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "dataset_clean",
+                  "producerTask": "data-preprocessing"
+                }
+              }
+            },
+            "parameters": {
+              "destination_table": {
+                "runtimeValue": {
+                  "constant": "koufu_product_trx_list.cust_recomm_beer_category"
+                }
+              },
+              "location": {
+                "componentInputParameter": "location"
+              },
+              "product_category": {
+                "runtimeValue": {
+                  "constant": "BEER"
+                }
+              },
+              "project_id": {
+                "componentInputParameter": "project_id"
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "get-recommendation-and-evaluation-5"
+          }
+        }
+      }
+    },
+    "inputDefinitions": {
+      "parameters": {
+        "args": {
+          "defaultValue": [
+            "--arg-key",
+            "arg-value"
+          ],
+          "isOptional": true,
+          "parameterType": "LIST"
+        },
+        "bucket_name": {
+          "defaultValue": "your-bucket-name",
+          "isOptional": true,
+          "parameterType": "STRING"
+        },
+        "location": {
+          "defaultValue": "your-project-region",
+          "isOptional": true,
+          "parameterType": "STRING"
+        },
+        "project_id": {
+          "defaultValue": "your-project-id",
+          "isOptional": true,
+          "parameterType": "STRING"
+        }
+      }
+    },
+    "outputDefinitions": {
+      "artifacts": {
+        "get-recommendation-and-evaluation-2-kpi": {
+          "artifactType": {
+            "schemaTitle": "system.Metrics",
+            "schemaVersion": "0.0.1"
+          }
+        },
+        "get-recommendation-and-evaluation-3-kpi": {
+          "artifactType": {
+            "schemaTitle": "system.Metrics",
+            "schemaVersion": "0.0.1"
+          }
+        },
+        "get-recommendation-and-evaluation-4-kpi": {
+          "artifactType": {
+            "schemaTitle": "system.Metrics",
+            "schemaVersion": "0.0.1"
+          }
+        },
+        "get-recommendation-and-evaluation-5-kpi": {
+          "artifactType": {
+            "schemaTitle": "system.Metrics",
+            "schemaVersion": "0.0.1"
+          }
+        },
+        "get-recommendation-and-evaluation-kpi": {
+          "artifactType": {
+            "schemaTitle": "system.Metrics",
+            "schemaVersion": "0.0.1"
+          }
+        }
+      }
+    }
+  },
+  "schemaVersion": "2.1.0",
+  "sdkVersion": "kfp-2.0.0"
+}
